@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/"
+    "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/",
+    "build-example": "webpack --config webpack.config.js --no-info --content-base example/"
   },
   "author": "Alex Lande",
   "license": "MIT",
