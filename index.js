@@ -25,6 +25,7 @@ var StyleGuideItem = React.createClass({
     exampleClass: React.PropTypes.string,
     markupClass: React.PropTypes.string,
     anchorClass: React.PropTypes.string,
+    expanderSectionClass: React.PropTypes.string,
     expanderClass: React.PropTypes.string,
 
     // Text
@@ -54,6 +55,7 @@ var StyleGuideItem = React.createClass({
       exampleClass: 'Guide-example',
       markupClass: 'Guide-markup',
       anchorClass: 'Guide-anchor',
+      expanderSectionClass: 'Guide-expanderSection',
       expanderClass: 'Guide-expander',
 
       // Text
@@ -74,29 +76,6 @@ var StyleGuideItem = React.createClass({
     });
   },
 
-  renderExpander: function () {
-    if (!this.props.expandingMarkup) {
-      return;
-    }
-    
-    var expanderText = this.props.expanderInactiveText;
-
-    if (this.state.markupExpanded) {
-      expanderText = this.props.expanderActiveText;
-    }
-
-    return (
-      <div>
-        <button
-          className={this.props.expanderClass}
-          onClick={this.toggleExpander}
-        >
-          {expanderText}
-        </button>
-      </div>
-    )
-  },
-
   renderTitle: function () {
     if (!this.props.title) {
       return null;
@@ -104,14 +83,15 @@ var StyleGuideItem = React.createClass({
 
     var HeadingTag = this.props.headingTag;
     var sectionId = slugify(this.props.title);
-    var anchorElement;
+    var titleElement = this.props.title;
 
     if (this.props.sectionAnchor) {
-      anchorElement = (
+      titleElement = (
         <a
+          className={this.props.anchorClass}
           href={'#' + sectionId}
-          aria-hidden={true}
         >
+          {this.props.title}
         </a>
       );
     }
@@ -121,8 +101,7 @@ var StyleGuideItem = React.createClass({
         id={sectionId}
         className={this.props.headingClass}
       >
-        {anchorElement}
-        {this.props.title}
+        {titleElement}
       </HeadingTag>
     );
   },
@@ -143,7 +122,7 @@ var StyleGuideItem = React.createClass({
 
     return (
       <div className={this.props.descriptionClass}>
-        {this.props.description}
+        <p>{this.props.description}</p>
       </div>
     );
   },
@@ -167,6 +146,29 @@ var StyleGuideItem = React.createClass({
         {markup}
       </pre>
     );
+  },
+
+  renderExpander: function () {
+    if (!this.props.expandingMarkup) {
+      return;
+    }
+
+    var expanderText = this.props.expanderInactiveText;
+
+    if (this.state.markupExpanded) {
+      expanderText = this.props.expanderActiveText;
+    }
+
+    return (
+      <div className={this.props.expanderSectionClass}>
+        <button
+          className={this.props.expanderClass}
+          onClick={this.toggleExpander}
+        >
+          {expanderText}
+        </button>
+      </div>
+    )
   },
 
   render: function () {

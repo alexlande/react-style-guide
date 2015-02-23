@@ -1,22 +1,86 @@
-.description {
-  border: 1px solid #ccc;
-  border-bottom-width: 0;
-  border-radius: 4px 4px 0 0;
-  padding: 1em;
-  background: #eee;
+.Guide {
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
-.sample {
-  margin: 0;
-  padding: 1em;
-  overflow: auto;
-  border-radius: 0 0 4px 4px;
+.Guide + .Guide {
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
 
+.Guide-heading {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  border-radius: 3px 3px 0 0;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Guide-anchor {
+  color: #333;
+  text-decoration: none;
+}
+
+.Guide-description {
+  border-bottom: 1px solid #ddd;
+  padding: 16px;
+  padding: 1rem;
+}
+
+.Guide-description p {
+  margin: 0;
+}
+
+.Guide-description p + p {
+  margin-top: 1em;
+}
+
+.Guide-example {
+  padding: 8px 16px;
+  padding: 1rem;
+}
+
+.Guide-markup {
   background: #2b303b;
+  border: 1px solid #16191F;
   color: #fff;
   font-family: "Source Code Pro", monospace;
+  margin: 0 -1px;
+  overflow: auto;
+  padding: 16px;
+  padding: 1rem;
   -moz-tab-size: 2;
   tab-size: 2;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.Guide-expanderSection {
+  background: #fafafa;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 3px 3px;
+  height: 24px;
+  height: 1.5rem;
+  position: relative;
+}
+
+.Guide-expander {
+  background: none;
+  border: 0;
+  color: #4A5366;
+  cursor: pointer;
+  font-size: 0.625em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  height: 100%;
+  padding: 0 0.5em;
+  position: absolute;
+  right: 0;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
 }
