@@ -1,6 +1,6 @@
 # React Style Guide
 
-A simple React component for building living style guides with React.
+A simple React component for building living style guides with React. Check out the [example](http://www.alexlande.com/react-style-guide/).
 
 ## Features
 
