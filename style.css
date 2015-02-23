@@ -1,0 +1,22 @@
+.description {
+  border: 1px solid #ccc;
+  border-bottom-width: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 1em;
+  background: #eee;
+}
+
+.sample {
+  margin: 0;
+  padding: 1em;
+  overflow: auto;
+  border-radius: 0 0 4px 4px;
+
+  background: #2b303b;
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  -moz-tab-size: 2;
+  tab-size: 2;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
