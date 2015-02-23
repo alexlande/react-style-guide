@@ -12,16 +12,6 @@ var highlightMarkup = function (markup) {
   return hl.highlightAuto(markup).value;
 };
 
-var TestSection = React.createClass({
-  render: function () {
-    return (
-      <section>
-        {this.props.children}
-      </section>
-    );
-  }
-});
-
 var CoolButton = React.createClass({
   render: function () {
     var styles = {};
@@ -51,31 +41,6 @@ var App = React.createClass({
   render: function () {
     return (
       <div>
-        <StyleGuideItem
-          title="Test Section"
-          description="This is a very cool test section!"
-          highlighter={highlightMarkup}>
-          <TestSection
-            cool={true}
-            type="primary"
-            size="large"
-            friends={["john", "mark"]}>
-            <h1
-              friends={["paul", "mark"]}
-              things={{make: "Ford"}}>
-              This is a section
-            </h1>
-
-            <CoolButton
-              we="have"
-              so="many"
-              props="yeah!"
-              >
-              Button!
-            </CoolButton>
-          </TestSection>
-        </StyleGuideItem>
-
         <StyleGuideItem
           title="Cool Button"
           description="This is a very cool button!"
