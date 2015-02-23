@@ -2,16 +2,6 @@ var React = require('react');
 
 var StyleGuideItem = require('../index');
 
-var hl = require("highlight.js");
-
-hl.configure({
-  languages: ['xml']
-});
-
-var highlightMarkup = function (markup) {
-  return hl.highlightAuto(markup).value;
-};
-
 var CoolButton = React.createClass({
   render: function () {
     var styles = {};
@@ -44,7 +34,7 @@ var App = React.createClass({
         <StyleGuideItem
           title="Cool Button"
           description="This is a very cool button!"
-          highlighter={highlightMarkup}>
+        >
           <CoolButton>
             Button!
           </CoolButton>

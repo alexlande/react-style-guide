@@ -1,6 +1,15 @@
 var React = require('react');
 var reactToJsx = require('react-to-jsx');
 var slugify = require('slugify');
+var hl = require("highlight.js");
+
+hl.configure({
+  languages: ['xml']
+});
+
+var highlightMarkup = function (markup) {
+  return hl.highlightAuto(markup).value;
+};
 
 var StyleGuideItem = React.createClass({
   propTypes: {
@@ -42,7 +51,7 @@ var StyleGuideItem = React.createClass({
       staticMarkup: null,
 
       // Behavior
-      highlighter: null,
+      highlighter: highlightMarkup,
       expandingMarkup: true,
       markupExpandedByDefault: false,
       sectionAnchor: true,
