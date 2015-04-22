@@ -1,6 +1,6 @@
 {
   "name": "react-style-guide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/",
@@ -19,7 +19,7 @@
     "webpack-dev-server": "^1.7.0"
   },
   "peerDependencies": {
-    "react": "^0.12.2"
+    "react": ">=0.12.0 <0.14.0"
   },
   "description": "A component to display React components with their JSX source in style guides",
   "directories": {
