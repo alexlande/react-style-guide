@@ -12,6 +12,7 @@ var highlightMarkup = function (markup) {
 };
 
 var StyleGuideItem = React.createClass({
+  displayName: "StyleGuideItem",
   propTypes: {
     // Content
     title: React.PropTypes.string,
@@ -96,22 +97,22 @@ var StyleGuideItem = React.createClass({
 
     if (this.props.sectionAnchor) {
       titleElement = (
-        <a
-          className={this.props.anchorClass}
-          href={'#' + sectionId}
-        >
-          {this.props.title}
-        </a>
+        React.createElement("a", {
+          className: this.props.anchorClass,
+          href: '#' + sectionId
+        },
+          this.props.title
+        )
       );
     }
 
     return (
-      <HeadingTag
-        id={sectionId}
-        className={this.props.headingClass}
-      >
-        {titleElement}
-      </HeadingTag>
+      React.createElement(HeadingTag, {
+        id: sectionId,
+        className: this.props.headingClass
+      },
+        titleElement
+      )
     );
   },
 
@@ -122,17 +123,17 @@ var StyleGuideItem = React.createClass({
 
     if (this.descriptionIsHtml) {
       return (
-        <div
-          className={this.props.descriptionClass}
-          dangerouslySetInnerHTML={{__html: this.props.description }}
-        />
+        React.createElement("div", {
+          className: this.props.descriptionClass,
+          dangerouslySetInnerHTML: {__html: this.props.description}}
+        )
       );
     }
 
     return (
-      <div className={this.props.descriptionClass}>
-        <p>{this.props.description}</p>
-      </div>
+      React.createElement("div", {className: this.props.descriptionClass},
+        React.createElement("p", null, this.props.description)
+      )
     );
   },
 
@@ -143,17 +144,17 @@ var StyleGuideItem = React.createClass({
 
     if (this.props.highlighter) {
       return (
-        <pre
-          className={this.props.markupClass}
-          dangerouslySetInnerHTML={{__html: this.props.highlighter(markup)}}
-        />
+        React.createElement("pre", {
+          className: this.props.markupClass,
+          dangerouslySetInnerHTML: {__html: this.props.highlighter(markup)}}
+        )
       );
     }
 
     return (
-      <pre className={this.props.markupClass}>
-        {markup}
-      </pre>
+      React.createElement("pre", {className: this.props.markupClass},
+        markup
+      )
     );
   },
 
@@ -169,14 +170,14 @@ var StyleGuideItem = React.createClass({
     }
 
     return (
-      <div className={this.props.expanderSectionClass}>
-        <button
-          className={this.props.expanderClass}
-          onClick={this.toggleExpander}
-        >
-          {expanderText}
-        </button>
-      </div>
+      React.createElement("div", {className: this.props.expanderSectionClass},
+        React.createElement("button", {
+          className: this.props.expanderClass,
+          onClick: this.toggleExpander
+        },
+          expanderText
+        )
+      )
     )
   },
 
@@ -184,18 +185,18 @@ var StyleGuideItem = React.createClass({
     var markup = this.props.staticMarkup || reactToJsx(this.props.children);
 
     return (
-      <div className={this.props.componentClass}>
-        {this.renderTitle()}
-        {this.renderDescription()}
+      React.createElement("div", {className: this.props.componentClass},
+        this.renderTitle(),
+        this.renderDescription(),
 
-        <div className={this.props.exampleClass}>
-          {this.props.children}
-        </div>
+        React.createElement("div", {className: this.props.exampleClass},
+          this.props.children
+        ),
 
-        {this.renderMarkup(markup)}
+        this.renderMarkup(markup),
 
-        {this.renderExpander()}
-      </div>
+        this.renderExpander()
+      )
     );
   }
 });
