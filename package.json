@@ -1,6 +1,6 @@
 {
   "name": "react-style-guide",
-  "version": "1.0.4",
+  "version": "1.1.4",
   "main": "index.js",
   "scripts": {
     "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/",
