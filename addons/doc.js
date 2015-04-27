@@ -37,7 +37,7 @@ var propTypesArray = [{
 var getReactPropType = function (propTypeFunc) {
   var propType = {
     name: 'custom',
-    isRequire: false
+    isRequired: false
   };
 
   for (var i = 0; i < propTypesArray.length; i++) {
