@@ -34,10 +34,12 @@ Optionally, include the CSS in `react-style-guide.css` for a nice set of default
 
 ```bash
 npm install
-npm run build-example
+npm run example
 ```
 
-To run the example and watch for changes, run
+Then you can browse to [http://localhost:8080/](http://localhost:8080/)
+
+To build the example files once:
 
 ```bash
 npm run example
