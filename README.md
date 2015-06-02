@@ -30,6 +30,21 @@ A simple React component for building living style guides with React. Check out 
 
 Optionally, include the CSS in `react-style-guide.css` for a nice set of default styles.
 
+## Building the Examples
+
+```bash
+npm install
+npm run build-example
+```
+
+To run the example and watch for changes, run
+
+```bash
+npm run example
+```
+
+Then you can open `./examples/index.html`
+
 ### Props
 
 #### title
