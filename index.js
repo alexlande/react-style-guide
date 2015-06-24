@@ -121,7 +121,7 @@ var StyleGuideItem = React.createClass({
       return null;
     }
 
-    if (this.descriptionIsHtml) {
+    if (this.props.descriptionIsHtml) {
       return (
         React.createElement("div", {
           className: this.props.descriptionClass,
