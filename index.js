@@ -1,11 +1,9 @@
 var React = require('react');
 var reactToJsx = require('react-to-jsx');
 var slugify = require('slugify');
-var hl = require("highlight.js");
+var hl = require("highlight.js/lib/highlight.js");
 
-hl.configure({
-  languages: ['xml']
-});
+hl.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 
 var highlightMarkup = function (markup) {
   return hl.highlightAuto(markup).value;
