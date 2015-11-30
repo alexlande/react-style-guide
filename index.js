@@ -171,7 +171,8 @@ var StyleGuideItem = React.createClass({
       React.createElement("div", {className: this.props.expanderSectionClass},
         React.createElement("button", {
           className: this.props.expanderClass,
-          onClick: this.toggleExpander
+          onClick: this.toggleExpander,
+          type: "button"
         },
           expanderText
         )
