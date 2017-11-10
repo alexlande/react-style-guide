@@ -1,6 +1,6 @@
 {
   "name": "react-style-guide",
-  "version": "1.1.8",
+  "version": "2.0.0",
   "main": "index.js",
   "scripts": {
     "example": "webpack-dev-server --config webpack.config.js --no-info --content-base example/",
@@ -9,7 +9,9 @@
   "author": "Alex Lande",
   "license": "MIT",
   "dependencies": {
+    "create-react-class": "^15.6.2",
     "highlight.js": "^8.4.0",
+    "prop-types": "^15.6.0",
     "react-to-jsx": "^1.3.2",
     "slugify": "^0.1.0"
   },
@@ -19,7 +21,7 @@
     "webpack-dev-server": "^1.7.0"
   },
   "peerDependencies": {
-    "react": ">=0.12.0"
+    "react": ">=16.0.0"
   },
   "description": "A component to display React components with their JSX source in style guides",
   "directories": {

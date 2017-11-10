@@ -1,4 +1,6 @@
 var React = require('react');
+var PropTypes = require('prop-types');
+var createClass = require('create-react-class');
 var reactToJsx = require('react-to-jsx');
 var slugify = require('slugify');
 var hl = require("highlight.js/lib/highlight.js");
@@ -9,36 +11,36 @@ var highlightMarkup = function (markup) {
   return hl.highlightAuto(markup).value;
 };
 
-var StyleGuideItem = React.createClass({
+var StyleGuideItem = createClass({
   displayName: "StyleGuideItem",
   propTypes: {
     // Content
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    descriptionIsHtml: React.PropTypes.bool,
-    staticMarkup: React.PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    descriptionIsHtml: PropTypes.bool,
+    staticMarkup: PropTypes.string,
 
     // Behavior
-    highlighter: React.PropTypes.func,
-    expandingMarkup: React.PropTypes.bool,
-    markupExpandedByDefault: React.PropTypes.bool,
-    sectionLink: React.PropTypes.bool,
-    sectionId: React.PropTypes.string,
+    highlighter: PropTypes.func,
+    expandingMarkup: PropTypes.bool,
+    markupExpandedByDefault: PropTypes.bool,
+    sectionLink: PropTypes.bool,
+    sectionId: PropTypes.string,
 
     // Classes and Markup
-    headingTag: React.PropTypes.string,
-    componentClass: React.PropTypes.string,
-    headingClass: React.PropTypes.string,
-    descriptionClass: React.PropTypes.string,
-    exampleClass: React.PropTypes.string,
-    markupClass: React.PropTypes.string,
-    anchorClass: React.PropTypes.string,
-    expanderSectionClass: React.PropTypes.string,
-    expanderClass: React.PropTypes.string,
+    headingTag: PropTypes.string,
+    componentClass: PropTypes.string,
+    headingClass: PropTypes.string,
+    descriptionClass: PropTypes.string,
+    exampleClass: PropTypes.string,
+    markupClass: PropTypes.string,
+    anchorClass: PropTypes.string,
+    expanderSectionClass: PropTypes.string,
+    expanderClass: PropTypes.string,
 
     // Text
-    expanderInactiveText: React.PropTypes.string,
-    expanderActiveText: React.PropTypes.string
+    expanderInactiveText: PropTypes.string,
+    expanderActiveText: PropTypes.string
   },
 
   getDefaultProps: function () {
